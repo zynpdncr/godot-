@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://bohhfqgaw1q54"]
+
+[ext_resource type="Script" path="res://main/main.gd" id="1_hefk5"]
+[ext_resource type="Theme" uid="uid://pvfp31hfuho8" path="res://buttons folder/play button theme.tres" id="2_8yi11"]
+[ext_resource type="Theme" uid="uid://0ddqavh1mo7q" path="res://buttons folder/option button.tres" id="3_ty7pd"]
+[ext_resource type="Theme" uid="uid://5mm7num6xlj5" path="res://buttons folder/quitbutton.tres" id="4_5ed8x"]
+[ext_resource type="Theme" uid="uid://btykbtxkdqxgq" path="res://sound.on.off.tres" id="5_qcytp"]
+[ext_resource type="Texture2D" uid="uid://cnkbavsmclrvc" path="res://buttons folder/sound button.png" id="6_rkj4r"]
+[ext_resource type="PackedScene" uid="uid://bjo7pqwvm8b70" path="res://bg.tscn" id="7_8xhky"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5qnau"]
+texture = ExtResource("6_rkj4r")
+region_rect = Rect2(0, -5, 283, 306)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gq3yg"]
+texture = ExtResource("6_rkj4r")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vwx6n"]
+texture = ExtResource("6_rkj4r")
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_hefk5")
+
+[node name="Button play" type="Button" parent="."]
+offset_left = 464.0
+offset_top = 257.0
+offset_right = 633.0
+offset_bottom = 323.0
+theme = ExtResource("2_8yi11")
+
+[node name="Options" type="Button" parent="."]
+offset_left = 464.0
+offset_top = 344.0
+offset_right = 642.0
+offset_bottom = 412.0
+theme = ExtResource("3_ty7pd")
+
+[node name="Button quit" type="Button" parent="."]
+offset_left = 463.0
+offset_top = 433.0
+offset_right = 643.0
+offset_bottom = 501.0
+theme = ExtResource("4_5ed8x")
+
+[node name="Sound off_on" type="Button" parent="."]
+offset_left = 1053.0
+offset_top = 16.0
+offset_right = 1148.0
+offset_bottom = 96.0
+theme = ExtResource("5_qcytp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5qnau")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gq3yg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vwx6n")
+
+[node name="ParallaxBackground BG" parent="." instance=ExtResource("7_8xhky")]
+
+[connection signal="pressed" from="Button play" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Button quit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="Sound off_on" to="." method="_on_sound_off_on_pressed"]

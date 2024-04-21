@@ -1,0 +1,104 @@
+[gd_scene load_steps=12 format=3 uid="uid://bqs7arjit7b3f"]
+
+[ext_resource type="Texture2D" uid="uid://ffvik5jh6xm0" path="res://bg and other stuff/craftpix nature background/nature_4/1.png" id="1_t1omn"]
+[ext_resource type="Texture2D" uid="uid://co0ge4bw0i1t7" path="res://bg and other stuff/craftpix clouds/PNG/Clouds_white/Shape2/cloud_shape2_3.png" id="2_c84vd"]
+[ext_resource type="Texture2D" uid="uid://bvexpuenc1psm" path="res://bg and other stuff/craftpix clouds/PNG/Clouds_white/Shape2/cloud_shape2_5.png" id="3_f5d7i"]
+[ext_resource type="Texture2D" uid="uid://bkk8dg36jqoq6" path="res://bg and other stuff/craftpix clouds/PNG/Clouds_white/Shape2/cloud_shape2_1.png" id="4_uds02"]
+[ext_resource type="Texture2D" uid="uid://ckv8ru30y3k0a" path="res://bg and other stuff/craftpix clouds/PNG/Clouds_white/Shape2/cloud_shape2_4.png" id="5_aff2h"]
+[ext_resource type="Texture2D" uid="uid://23dsnmeop5hv" path="res://bg and other stuff/craftpix nature background/nature_4/2.png" id="6_632fd"]
+[ext_resource type="Texture2D" uid="uid://b6hbnvnfr072s" path="res://bg and other stuff/craftpix nature background/nature_4/3.png" id="7_pgxy6"]
+[ext_resource type="Texture2D" uid="uid://cfegn8t14y1sj" path="res://bg and other stuff/craftpix nature background/nature_4/4.png" id="9_3mdxv"]
+[ext_resource type="Texture2D" uid="uid://bm703wyvu0ejx" path="res://Castle_33-removebg-preview.png" id="10_o5lm2"]
+[ext_resource type="Texture2D" uid="uid://mbx4aodt8g68" path="res://bg and other stuff/craftpix bushes/PNG/Bushes1/Bush1_2.png" id="11_jdfmg"]
+
+[sub_resource type="GDScript" id="GDScript_2etly"]
+
+[node name="ENV SCENE BG" type="ParallaxBackground"]
+
+[node name="Clouds" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1152, 0)
+script = SubResource("GDScript_2etly")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Clouds"]
+position = Vector2(577, 323)
+scale = Vector2(2.00347, 1.99383)
+texture = ExtResource("1_t1omn")
+
+[node name="CloudShape23" type="Sprite2D" parent="Clouds"]
+position = Vector2(482, 57)
+scale = Vector2(1.20833, 1.68182)
+texture = ExtResource("2_c84vd")
+
+[node name="CloudShape25" type="Sprite2D" parent="Clouds"]
+position = Vector2(792.5, 84.25)
+scale = Vector2(1.24306, 1.19697)
+texture = ExtResource("2_c84vd")
+
+[node name="CloudShape26" type="Sprite2D" parent="Clouds"]
+position = Vector2(812, 179)
+texture = ExtResource("3_f5d7i")
+
+[node name="CloudShape28" type="Sprite2D" parent="Clouds"]
+position = Vector2(1022, 35)
+texture = ExtResource("3_f5d7i")
+
+[node name="Sprite2D" type="Sprite2D" parent="Clouds"]
+position = Vector2(152.75, 79.25)
+scale = Vector2(1.09007, 1.66935)
+texture = ExtResource("4_uds02")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Clouds"]
+position = Vector2(1011, 144.125)
+scale = Vector2(1.13971, 2.02823)
+texture = ExtResource("4_uds02")
+
+[node name="CloudShape24" type="Sprite2D" parent="Clouds"]
+position = Vector2(614.75, 157.25)
+scale = Vector2(1.40291, 1.83333)
+texture = ExtResource("5_aff2h")
+
+[node name="2" type="Sprite2D" parent="Clouds"]
+position = Vector2(580.25, 397)
+scale = Vector2(2.08073, 1.67901)
+texture = ExtResource("6_632fd")
+
+[node name="CloudShape27" type="Sprite2D" parent="Clouds"]
+position = Vector2(323, 184)
+scale = Vector2(2.4466, 3.10185)
+texture = ExtResource("5_aff2h")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Castle" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Castle"]
+position = Vector2(210, 267)
+scale = Vector2(1.01838, 0.923203)
+texture = ExtResource("10_o5lm2")
+
+[node name="Bush12" type="Sprite2D" parent="ParallaxBackground/Castle"]
+position = Vector2(418, 498)
+scale = Vector2(1.23765, 1.40152)
+texture = ExtResource("11_jdfmg")
+
+[node name="BG" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BG"]
+position = Vector2(288, 381)
+texture = ExtResource("7_pgxy6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="BG"]
+position = Vector2(864, 383)
+texture = ExtResource("7_pgxy6")
+
+[node name="Sprite2D3" type="Sprite2D" parent="BG"]
+position = Vector2(292, 374)
+scale = Vector2(1.01563, 1.07407)
+texture = ExtResource("9_3mdxv")
+
+[node name="Sprite2D4" type="Sprite2D" parent="BG"]
+position = Vector2(874, 374)
+scale = Vector2(1.01563, 1.07407)
+texture = ExtResource("9_3mdxv")

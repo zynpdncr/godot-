@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://vkgga7b16rl6"]
+
+[ext_resource type="PackedScene" uid="uid://7q2tuf7k2uah" path="res://Player/Player.2d.tscn" id="1_th5m3"]
+[ext_resource type="Script" path="res://env scene bg/Envelope.gd" id="2_o3rld"]
+[ext_resource type="Texture2D" uid="uid://bdcv852lhci6m" path="res://ENVELOPE.png" id="2_voxhy"]
+[ext_resource type="Texture2D" uid="uid://cy23yjjmmiso0" path="res://paper.png" id="4_qj0ge"]
+[ext_resource type="Texture2D" uid="uid://dtucjwjqkfys1" path="res://arrow.png" id="5_3uj74"]
+[ext_resource type="Script" path="res://env scene bg/textureRect.gd" id="5_4wwgs"]
+[ext_resource type="Script" path="res://env scene bg/returnbutton.gd" id="7_mstlg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4sya6"]
+size = Vector2(131, 98.5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_th5m3")]
+position = Vector2(106, 404)
+
+[node name="Envelope" type="Area2D" parent="."]
+script = ExtResource("2_o3rld")
+
+[node name="Sprite2D" type="Sprite2D" parent="Envelope"]
+position = Vector2(577, 418)
+scale = Vector2(0.479825, 0.525401)
+texture = ExtResource("2_voxhy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Envelope"]
+position = Vector2(577, 418.75)
+shape = SubResource("RectangleShape2D_4sya6")
+
+[node name="Control" type="Control" parent="Envelope"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="interactLabel" type="Label" parent="Envelope/Control"]
+visible = false
+layout_mode = 2
+offset_left = 515.103
+offset_top = 361.782
+offset_right = 678.103
+offset_bottom = 395.782
+scale = Vector2(2, 2)
+text = "[E] TO INTERACT"
+
+[node name="textureRect" type="TextureRect" parent="Envelope"]
+offset_left = -29.0
+offset_top = 112.0
+offset_right = 749.0
+offset_bottom = 1110.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_qj0ge")
+script = ExtResource("5_4wwgs")
+
+[node name="returnButton" type="Button" parent="Envelope/textureRect"]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 778.0
+offset_right = 824.0
+offset_bottom = 986.0
+scale = Vector2(0.4, 0.4)
+icon = ExtResource("5_3uj74")
+flat = true
+script = ExtResource("7_mstlg")
+
+[connection signal="pressed" from="Envelope/textureRect/returnButton" to="Envelope" method="_on_button_pressed"]
+[connection signal="pressed" from="Envelope/textureRect/returnButton" to="Envelope/textureRect" method="_on_return_button_pressed"]

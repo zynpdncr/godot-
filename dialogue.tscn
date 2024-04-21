@@ -1,0 +1,107 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2ae4vlnqsxwd"]
+
+[ext_resource type="Script" path="res://DialogueBox.gd" id="1_2f6ly"]
+[ext_resource type="Script" path="res://dialogue.gd" id="1_jtlm5"]
+[ext_resource type="Texture2D" uid="uid://dx4iqcskik2bi" path="res://MUSİC/Ekran_görüntüsü_2024-04-14_213158-removebg-preview.png" id="2_egbfd"]
+[ext_resource type="Texture2D" uid="uid://d0rnxsmv6wkn" path="res://MUSİC/pixel-arrow-glyph-icon-forward-indicator-right-vector-29169821-removebg-preview.png" id="3_maeyc"]
+
+[sub_resource type="Animation" id="Animation_1xxw1"]
+resource_name = "Idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(887, 360), Vector2(906, 360)]
+}
+
+[sub_resource type="Animation" id="Animation_c7uhi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(906, 360)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xcqs2"]
+_data = {
+"Idle": SubResource("Animation_1xxw1"),
+"RESET": SubResource("Animation_c7uhi")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 41.0
+offset_right = -20.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jtlm5")
+
+[node name="DialogueBox" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = -44.0
+offset_right = 21.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2f6ly")
+
+[node name="TextureRect" type="TextureRect" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -21.0
+offset_right = -20.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_egbfd")
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueBox"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 212.0
+offset_top = 232.0
+offset_right = 1072.0
+offset_bottom = 660.0
+theme_override_font_sizes/normal_font_size = 42
+bbcode_enabled = true
+text = "Greetings , Zarya."
+text_direction = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(906, 360)
+scale = Vector2(0.158004, 0.149085)
+texture = ExtResource("3_maeyc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_xcqs2")
+}
+autoplay = "Idle"

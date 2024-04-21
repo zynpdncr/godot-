@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjo7pqwvm8b70"]
+
+[ext_resource type="Script" path="res://bg.gd" id="1_h6ddr"]
+[ext_resource type="Texture2D" uid="uid://2k6jfsqhje8m" path="res://bg and other stuff/dungeon castle/Background/layer_1.png" id="2_kpvq3"]
+[ext_resource type="Texture2D" uid="uid://dod1dlxe3wb6n" path="res://bg and other stuff/dungeon castle/Background/layer_3.png" id="3_dxfsi"]
+[ext_resource type="Texture2D" uid="uid://bg7m1w5ae8sar" path="res://bg and other stuff/dungeon castle/Background/layer_2.png" id="4_lxkfi"]
+
+[node name="ParallaxBackground BG" type="ParallaxBackground"]
+script = ExtResource("1_h6ddr")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Layer1" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(577, 322)
+scale = Vector2(3.6, 3.56667)
+texture = ExtResource("2_kpvq3")
+metadata/_edit_lock_ = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Layer3" type="Sprite2D" parent="."]
+position = Vector2(576.5, 577.5)
+scale = Vector2(3.59688, 4.63333)
+texture = ExtResource("3_dxfsi")
+
+[node name="Layer2" type="Sprite2D" parent="."]
+position = Vector2(55, 466)
+scale = Vector2(1.87656, 2.8855)
+texture = ExtResource("4_lxkfi")
+
+[node name="Layer4" type="Sprite2D" parent="."]
+position = Vector2(655, 465.5)
+scale = Vector2(1.87656, 2.89313)
+texture = ExtResource("4_lxkfi")
+
+[node name="Layer5" type="Sprite2D" parent="."]
+position = Vector2(1253.38, 465.5)
+scale = Vector2(1.86641, 2.89313)
+texture = ExtResource("4_lxkfi")
+
+[node name="Layer6" type="Sprite2D" parent="."]
+position = Vector2(1852.63, 465)
+scale = Vector2(1.87891, 2.90076)
+texture = ExtResource("4_lxkfi")
+
+[node name="Layer7" type="Sprite2D" parent="."]
+position = Vector2(2452, 465)
+scale = Vector2(1.87656, 2.90076)
+texture = ExtResource("4_lxkfi")

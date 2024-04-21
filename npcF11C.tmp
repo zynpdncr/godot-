@@ -1,0 +1,138 @@
+[gd_scene load_steps=14 format=3 uid="uid://bpti13ccmcxut"]
+
+[ext_resource type="Script" path="res://npc_wizard.gd" id="1_os443"]
+[ext_resource type="Texture2D" uid="uid://e20pv71qdaba" path="res://Idle.png" id="2_tcled"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pnoub"]
+radius = 13.0
+height = 86.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfmeh"]
+atlas = ExtResource("2_tcled")
+region = Rect2(0, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3yym"]
+atlas = ExtResource("2_tcled")
+region = Rect2(231, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85fso"]
+atlas = ExtResource("2_tcled")
+region = Rect2(462, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gotvb"]
+atlas = ExtResource("2_tcled")
+region = Rect2(693, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bx0m"]
+atlas = ExtResource("2_tcled")
+region = Rect2(924, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogy2l"]
+atlas = ExtResource("2_tcled")
+region = Rect2(1155, 0, 231, 190)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8no1h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfmeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3yym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85fso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gotvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bx0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogy2l")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_nspx5"]
+resource_name = "Idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_4l4ij"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6t0pt"]
+_data = {
+"Idle": SubResource("Animation_nspx5"),
+"RESET": SubResource("Animation_4l4ij")
+}
+
+[node name="Npc wizard" type="Area2D"]
+position = Vector2(58, 49)
+script = ExtResource("1_os443")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, 10)
+shape = SubResource("CapsuleShape2D_pnoub")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 10)
+sprite_frames = SubResource("SpriteFrames_8no1h")
+animation = &"Idle"
+frame = 1
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6t0pt")
+}
+autoplay = "Idle"
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 413.0
+offset_top = 323.0
+offset_right = 508.0
+offset_bottom = 346.0
+text = "Interact (e)"

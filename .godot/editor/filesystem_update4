@@ -1,0 +1,13 @@
+res://env scene bg/interaction btween player and env.tscn
+res://buttons folder/play button theme.tres
+res://buttons folder/option button.tres
+res://buttons folder/quitbutton.tres
+res://env scene bg/textureRect.gd
+res://main/main.tscn
+res://Player/Player.2d.tscn
+res://bg.tscn
+res://dialogue.tscn
+res://begining.tscn
+res://level_1_chest_lvl.tscn
+res://env scene bg/env_scene_bg.tscn
+res://env scene bg/ENV SCENE.tscn

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwax207tgb356"]
+
+[ext_resource type="PackedScene" uid="uid://bjo7pqwvm8b70" path="res://bg.tscn" id="1_0gf22"]
+[ext_resource type="Texture2D" uid="uid://bt5b77n2v33y3" path="res://levels/hw_to_play-removebg-preview.png" id="1_78ioh"]
+
+[node name="How to play" type="Node2D"]
+
+[node name="ParallaxBackground BG" parent="." instance=ExtResource("1_0gf22")]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 268.0
+offset_top = 71.0
+offset_right = 891.0
+offset_bottom = 617.0
+texture = ExtResource("1_78ioh")

@@ -1,0 +1,124 @@
+[gd_scene load_steps=9 format=3 uid="uid://c4eisu4vl4o8j"]
+
+[ext_resource type="Texture2D" uid="uid://bvg122qfe0cjy" path="res://bg and other stuff/craftpix nature background/nature_1/1.png" id="1_ijd2x"]
+[ext_resource type="Texture2D" uid="uid://vvde025g5a3b" path="res://bg and other stuff/craftpix nature background/nature_1/2.png" id="2_vnssd"]
+[ext_resource type="Texture2D" uid="uid://cwloodpvyuwf6" path="res://bg and other stuff/craftpix nature background/nature_1/3.png" id="3_1vpyr"]
+[ext_resource type="Texture2D" uid="uid://dnks0d66t4ndl" path="res://bg and other stuff/craftpix nature background/nature_1/8.png" id="4_b8wg1"]
+[ext_resource type="Texture2D" uid="uid://cml2ad78sa4hb" path="res://bg and other stuff/craftpix nature background/nature_1/5.png" id="5_3xgu4"]
+[ext_resource type="Texture2D" uid="uid://61iewfigg0mv" path="res://bg and other stuff/craftpix nature background/nature_1/6.png" id="6_3wtff"]
+
+[sub_resource type="GDScript" id="GDScript_jf5pf"]
+script/source = "extends ParallaxBackground
+
+var scrolling_speed = 100
+
+func _process(delta):
+	scroll_offset.x -= scrolling_speed * delta
+"
+
+[sub_resource type="GDScript" id="GDScript_dxiqc"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = SubResource("GDScript_jf5pf")
+
+[node name="sky and clouds" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1152, 0)
+script = SubResource("GDScript_dxiqc")
+
+[node name="sky" type="Sprite2D" parent="sky and clouds"]
+texture_filter = 1
+position = Vector2(-2, 2)
+scale = Vector2(2.00694, 2.09877)
+texture = ExtResource("1_ijd2x")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="clouds" type="Sprite2D" parent="sky and clouds"]
+position = Vector2(302, 201)
+scale = Vector2(1.04861, 1.24074)
+texture = ExtResource("2_vnssd")
+metadata/_edit_lock_ = true
+
+[node name="clouds2" type="Sprite2D" parent="sky and clouds"]
+position = Vector2(874, 181)
+scale = Vector2(1, 1.0679)
+texture = ExtResource("2_vnssd")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="yeşiillik" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(573, 394)
+scale = Vector2(2.00347, 1.49383)
+texture = ExtResource("3_1vpyr")
+metadata/_edit_lock_ = true
+
+[node name="yeşilk" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D6" type="Sprite2D" parent="yeşilk"]
+position = Vector2(573, 336.5)
+scale = Vector2(1.99653, 1.30556)
+texture = ExtResource("4_b8wg1")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D7" type="Sprite2D" parent="yeşilk"]
+position = Vector2(1726, 334)
+scale = Vector2(1.99653, 1.30556)
+texture = ExtResource("4_b8wg1")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="yeşilk"]
+position = Vector2(247, 408)
+scale = Vector2(1.26215, 1.23148)
+texture = ExtResource("5_3xgu4")
+metadata/_edit_lock_ = true
+
+[node name="ağaç" type="Sprite2D" parent="yeşilk"]
+position = Vector2(610, 397)
+scale = Vector2(1.03993, 1.09877)
+texture = ExtResource("6_3wtff")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="yeşilk"]
+position = Vector2(1097, 401)
+scale = Vector2(1.26215, 1.23148)
+texture = ExtResource("5_3xgu4")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D5" type="Sprite2D" parent="yeşilk"]
+position = Vector2(1959, 396.75)
+scale = Vector2(1.26215, 1.27006)
+texture = ExtResource("5_3xgu4")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="yeşilk"]
+position = Vector2(1531, 401)
+scale = Vector2(1.26215, 1.23148)
+texture = ExtResource("5_3xgu4")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="yeşilk"]
+position = Vector2(668, 404)
+scale = Vector2(1.26215, 1.23148)
+texture = ExtResource("5_3xgu4")
+metadata/_edit_lock_ = true
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(2, 2)
+
+[node name="ağaç" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(239, 422)
+texture = ExtResource("6_3wtff")
+metadata/_edit_lock_ = true
+
+[node name="ağaç3" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(1689, 417)
+texture = ExtResource("6_3wtff")
+metadata/_edit_lock_ = true
+
+[node name="ağaç2" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(1226, 423)
+texture = ExtResource("6_3wtff")
+metadata/_edit_lock_ = true
